@@ -1,4 +1,4 @@
-package strartcode
+package strartcode.dayone
 
 import kotlin.math.sqrt
 

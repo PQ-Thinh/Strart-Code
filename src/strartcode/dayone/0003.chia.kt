@@ -1,4 +1,4 @@
-package strartcode
+package strartcode.dayone
 
 fun main(){
     print("Input a: ")
