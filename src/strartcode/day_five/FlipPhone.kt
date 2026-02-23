@@ -15,24 +15,27 @@ open class Phone(var isScreenLightOn: Boolean = false){
     }
 }
 
-class FoldAblePhone(var Fold:Boolean = false): Phone() {
-    fun switchFoldOn() {
-        Fold = true
-    }
-
+class FoldAblePhone(var  isFolded:Boolean = true): Phone() {
     override fun switchOn() {
-        super.switchOn()
+        if (! isFolded) {
+            isScreenLightOn = true
+        }
     }
 
-    override fun switchOff() {
-        super.switchOff()
+    fun fold() {
+        isFolded = true
     }
 
-    override fun checkPhoneScreenLight() {
-        super.checkPhoneScreenLight()
+    fun unfold() {
+        isFolded = false
     }
 }
 fun main(){
-    FoldAblePhone().switchOn()
-    FoldAblePhone().checkPhoneScreenLight()
+    val newFoldablePhone = FoldAblePhone()
+
+    newFoldablePhone.switchOn()
+    newFoldablePhone.checkPhoneScreenLight()
+    newFoldablePhone.unfold()
+    newFoldablePhone.switchOn()
+    newFoldablePhone.checkPhoneScreenLight()
 }
